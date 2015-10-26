@@ -50,4 +50,4 @@ Bilderna hämtas från Göteborgs Stads öppna data som JPEG av åter distribuer
 <img src="https://i.imgur.com/XBHE73N.png">
 
 ## Nedladdningar
-[Version 1.0-beta.1](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases)
+[Version 1.0-beta.1](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases/tag/v1.0-beta.1)
