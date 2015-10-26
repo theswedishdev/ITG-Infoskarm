@@ -3,6 +3,8 @@ ITG-Infoskarm
 
 ITG-Infoskarm är skapad för [IT-Gymnasiet Göteborg](http://it-gymnasiet.se/vara-skolor/goteborg).
 
+Källkoden finns under [gh-pages](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/tree/gh-pages). 
+
 ## Om ITG-Infoskarm
 ITG-Infoskarm är en hemsida som samlar information om nästa tur med Västtrafik från de fyra närliggande hållplatserna vid IT-Gymnasiet, samt matsedeln (_BETA_).
 
@@ -46,3 +48,6 @@ Bilderna hämtas från Göteborgs Stads öppna data som JPEG av åter distribuer
 
 ## Skärmdump
 <img src="https://i.imgur.com/XBHE73N.png">
+
+## Nedladdningar
+[Version 1.0-beta.1](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases)
