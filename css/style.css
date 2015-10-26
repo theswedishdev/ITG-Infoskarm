@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
+@import url("grid.css");
+
+* {
+	-webkit-user-select: none;
+  	-moz-user-select: none;
+  	-ms-user-select: none;
+  	user-select: none;
+	cursor: default;
+}
+
+body {
+	margin: 0;
+	font-family: 'Roboto', arial, sans-serif;
+	background-color: #212121;
+	color: #FFFFFF;
+}
+
+h1 {
+	margin: 0;
+	font-size: 3rem;
+}
+
+h2 {
+	margin: 0;
+	font-size: 1.854em;
+}
+
+h3 {
+	margin: 0;
+	font-size: 1.145772;
+}
+
+table {
+	width: 100%;
+}
+
+table tr:nth-child(even) {
+	background-color: #616161;
+}
+
+tr, td {
+	margin: 0;
+	padding: 2px;
+}
+
+.tid, .lage {
+	text-align: center;
+	width: 55px;
+}
+
+/*header {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+}*/
+
+header h1 {
+	text-align: center;
+}
+
+.nastatur {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.box {
+	width: 90%;
+	padding: 10px;
+	background-color: #424242;
+	margin: 0 auto 25px auto;
+	-webkit-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+
+.imgbox {
+	width: 90%;
+	margin: 0 auto 25px auto;
+}
+
+.imgbox img {
+	width: 100%;
+}
+
+.box h2 {
+	text-align: center;
+}
+
+.shadow-z1 {
+	box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+}
+
+.shadow-z2 {
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 5px 0 rgba(0,0,0,.23);
+}
+
+.shadow-z3 {
+	box-shadow: 0 10px 10px 0 rgba(0,0,0,.19), 0 6px 3px 0 rgba(0,0,0,.23);
+}
+
+.shadow-z4 {
+	box-shadow: 0 14px 14px 0 rgba(0,0,0,.25), 0 10px 5px 0 rgba(0,0,0,.22);
+}
+
+.shadow-z5 {
+	box-shadow: 0 19px 19px 0 rgba(0,0,0,.3), 0 15px 6px 0 rgba(0,0,0,.22);
+}
+
+#datetime {
+	margin-top: 13px;
+}
+
+#feedback, #itgappen {
+	text-align: center;
+}
+
+#itgappen img {
+	width: 150px;
+	height: 45px;
+	margin-top: 10px;
+	margin-left: 25px;
+	cursor: pointer !important;
+}
+
+#itgappen {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #424242;
+	box-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
+
+#hideApps {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100px;
+	height: 100px;
+	z-index: 10;
+}
+
+a:link, a:visited, a:active, a:hover {
+	text-decoration: none;
+	color: #2196F3;
+	cursor: pointer !important;
+}
+
+#chalmers_cam {
+	cursor: none;
+}
+
+#logo_container {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100px;
+	margin-bottom: 100px;
+}
+
+#logo {
+	width: 100%;
+}
+
+@media all and (max-width: 1500px) {
+	#logo {
+		width: 75%;
+	}
+}
