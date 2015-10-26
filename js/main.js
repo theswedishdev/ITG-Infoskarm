@@ -256,6 +256,7 @@ function clock() {
 function chalmersCam() {
 	$("#chalmers_cam").attr("src", "https://api.fam-ericsson.se/gbgcamera/?camera=17&v=" + Date.now()).on("error", function(err) {
 		$(this).attr("src", "img/error.png");
+		chalmers_cam();
 	});
 }
 
