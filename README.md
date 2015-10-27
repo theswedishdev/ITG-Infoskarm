@@ -1,6 +1,8 @@
 ITG-Infoskarm
 ============================
 
+[![Join the chat at https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ITG-Infoskarm är skapad för [IT-Gymnasiet Göteborg](http://it-gymnasiet.se/vara-skolor/goteborg).
 
 Källkoden finns under [gh-pages](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/tree/gh-pages). 
