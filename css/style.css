@@ -57,7 +57,7 @@ header h1 {
 }
 
 .nastatur {
-	width: calc(90% + 20px);
+	width: calc(90% + 20px) !important;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
