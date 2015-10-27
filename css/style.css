@@ -48,8 +48,19 @@ tr, td {
 }
 
 .tid, .lage {
+	width: 42px;
+	min-width: 42px;
+	max-width: 42px;
 	text-align: center;
-	width: 55px;
+}
+
+.linje {
+	width: 42px;
+	min-width: 42px;
+	max-width: 42px;
+	border-radius: 3px;
+	padding: 5px;
+	text-align: center;
 }
 
 header h1 {
@@ -163,6 +174,6 @@ a:link, a:visited, a:active, a:hover {
 
 @media all and (max-width: 1500px) {
 	#logo {
-		width: 75%;
+		display: none;
 	}
 }

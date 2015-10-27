@@ -39,11 +39,11 @@ function getStops() {
 						linjeinfo.fgFarg = "#3AB73D";
 					}
 
-					$("#chalmersTable").append("<tr><td style='width: 55px; border-radius: 3px; padding: 5px; text-align: center; background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
+					$("#chalmersTable").append("<tr><td class='linje' style='background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
 				});
 			});
 		} else {
-			$("#chalmersTable").html("<tr><td style='width: 55px; border-radius: 3px; padding: 5px; text-align: center; background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
+			$("#chalmersTable").html("<tr><td class='linje' style='background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
 		}
 	});
 
@@ -75,11 +75,11 @@ function getStops() {
 						linjeinfo.fgFarg = "#3AB73D";
 					}
 
-					$("#kapellplatsenTable").append("<tr><td style='width: 55px; border-radius: 3px; padding: 5px; text-align: center; background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
+					$("#kapellplatsenTable").append("<tr><td class='linje' style='background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
 				});
 			});
 		} else {
-			$("#kapellplatsenTable").html("<tr><td style='width: 55px; border-radius: 3px; padding: 5px; text-align: center; background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
+			$("#kapellplatsenTable").html("<tr><td class='linje' style='background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
 		}
 	});
 
@@ -111,11 +111,11 @@ function getStops() {
 						linjeinfo.fgFarg = "#3AB73D";
 					}
 
-					$("#chalmersTvargataTable").append("<tr><td style='width: 55px; border-radius: 3px; padding: 5px; text-align: center; background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
+					$("#chalmersTvargataTable").append("<tr><td class='linje' style='background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
 				});
 			});
 		} else {
-			$("#chalmersTvargataTable").html("<tr><td style='width: 55px; border-radius: 3px; padding: 5px; text-align: center; background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
+			$("#chalmersTvargataTable").html("<tr><td class='linje' style='background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
 		}
 	});
 
@@ -147,11 +147,11 @@ function getStops() {
 						linjeinfo.fgFarg = "#3AB73D";
 					}
 
-					$("#chalmersplatsenTable").append("<tr><td style='width: 55px; border-radius: 3px; padding: 5px; text-align: center; background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
+					$("#chalmersplatsenTable").append("<tr><td class='linje' style='background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
 				});
 			});
 		} else {
-			$("#chalmersplatsenTable").html("<tr><td style='width: 55px; border-radius: 3px; padding: 5px; text-align: center; background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
+			$("#chalmersplatsenTable").html("<tr><td class='linje' style='background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
 		}
 	});
 }
@@ -167,11 +167,17 @@ function getFood() {
 		} else {
 			$.each(data.food, function(curr, food) {
 				if (food.day == matsedel_dagar[day]) {
+					if (food.day == "Onsdag") {
+						food.day = "Untzdag";
+					}
 					$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
 					if (matsedel_dagar[day] != "Fredag") {
 						$("#matsedel_dagar").append("<hr>");
 					}
 				} else if (food.day == matsedel_dagar[day + 1] && matsedel_dagar[day + 1] != "Lördag") {
+					if (food.day == "Onsdag") {
+						food.day = "Untzdag";
+					}
 					$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
 				}
 			});
@@ -184,11 +190,6 @@ function timeDiff(fromUnix, toUnix) {
 }
 
 function dateDiff(fromDate, toDate, interval) {
-	/*
-	 * DateFormat month/day/year hh:mm:ss
-	 * ex.
-	 * datediff("01/01/2011 12:00:00", "01/01/2011 13:30:00", "seconds");
-	 */
 	var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
 	fromDate = new Date(fromDate);
 	toDate = new Date(toDate);
@@ -254,7 +255,7 @@ function clock() {
 }
 
 function chalmersCam() {
-	$("#chalmers_cam").attr("src", "https://api.fam-ericsson.se/gbgcamera/?camera=17&v=" + Date.now()).on("error", function(err) {
+	$("#chalmers_cam").attr("src", "https://api.fam-ericsson.se/gbgcamera/?camera=17&v=" + Date.now()).on("error", function() {
 		$(this).attr("src", "img/error.png");
 		chalmersCam();
 	});
@@ -289,9 +290,9 @@ $(document).ready(function() {
 	});
 });
 
-chalmersCam();
-getStops();
-getFood();
 clock();
+getStops();
+chalmersCam();
+getFood();
 
 setInterval(clock,1000);
