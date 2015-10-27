@@ -3,6 +3,9 @@ ITG-Infoskarm
 
 [![Join the chat at https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+[![ITG-Infoskarm senaste version](https://img.shields.io/badge/Senaste_version-1.0--beta.2-green.svg?style=flat-square)](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases/tag/v1.0-beta.2)
+[![ITG-Infoskarm MIT License](https://img.shields.io/badge/licens-MIT-blue.svg?style=flat-square)](LICENSE)
+
 ITG-Infoskarm är skapad för [IT-Gymnasiet Göteborg](http://it-gymnasiet.se/vara-skolor/goteborg).
 
 ## Om ITG-Infoskarm
@@ -48,8 +51,3 @@ Bilderna hämtas från Göteborgs Stads öppna data som JPEG av åter distribuer
 
 ## Skärmdump
 <img src="https://i.imgur.com/jP7e0lb.png">
-
-## Nedladdningar
-[Version 1.0-beta.2](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases/tag/v1.0-beta.2) _Senaste_
-
-[Version 1.0-beta.1](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases/tag/v1.0-beta.1)
