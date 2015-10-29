@@ -247,18 +247,28 @@ function clock() {
 
 	if(seconds < 10) {
 		seconds = "0" + seconds;
+	} else {
+		seconds = seconds.toString();
 	}
 	if(minutes < 10) {
 		minutes = "0" + minutes;
+	} else {
+		minutes = minutes.toString();
 	}
 	if(hours < 10) {
 		hours = "0" + hours;
+	} else {
+		hours = hours.toString();
 	}
 	if(date < 10) {
 		date = "0" + date;
+	} else {
+		date = date.toString();
 	}
 	if(month < 10) {
 		month = "0" + month;
+	} else {
+		month = month.toString();
 	}
 
 	$("#datetime #clock").html("<h2>" + hours + ":" + minutes + ":" + seconds + "</h2>");
@@ -266,12 +276,12 @@ function clock() {
 	var today = "<h2>" + dayObj[now.getDay()] + " " + date + " " + monthObj[month - 1] + "<br>Vecka " + getWeek() + "</h2>";
 	$("#datetime #date").html(today);
 
-	if(seconds == 0 || seconds == 30) {
+	if(seconds == "00" || seconds == "30") {
         getStops();
 		chalmersCam();
 	}
 
-	if (minutes == 59) {
+	if (minutes == "00" && seconds == "00") {
 		getFood();
 		getGitHub();
 	}
@@ -296,14 +306,23 @@ function getWeek() {
 }
 
 $(document).ready(function() {
-	$("#hideApps").click(function() {
+	if(typeof(Storage) !== "undefined") {
+    	var storage = true;
+	}
+	$("#hideApps").on("click", function() {
 		$("#itgappen").slideToggle(200, function() {
 			if ($("#itgappen").css("display") == "none") {
+				if (storage) {
+					localStorage.appsHidden = "true";
+				}
 				$("#logo_container").animate({
 					width: "150px",
 					marginBottom: "0px"
 				}, 200);
 			} else {
+				if (storage) {
+					localStorage.appsHidden = "false";
+				}
 				$("#logo_container").animate({
 					width: "100px",
 					marginBottom: "100px"
@@ -311,6 +330,10 @@ $(document).ready(function() {
 			}
 		});
 	});
+	if (localStorage.appsHidden == "true") {
+		$("#itgappen").hide();
+		$("#logo_container").css("width", "150px").css("margin-bottom", "0");
+	}
 });
 
 clock();
@@ -319,4 +342,4 @@ chalmersCam();
 getFood();
 getGitHub();
 
-setInterval(clock,1000);
+var clockInterval = setInterval(clock,1000);
