@@ -3,8 +3,8 @@ ITG-Infoskarm
 
 [![Join the chat at https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![ITG-Infoskarm senaste version](https://img.shields.io/badge/Senaste_version-1.0--beta.4-green.svg?style=flat-square)](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases)
-[![ITG-Infoskarm MIT License](https://img.shields.io/badge/licens-MIT-blue.svg?style=flat-square)](LICENSE)
+[![ITG-Infoskarm senaste version](https://img.shields.io/badge/Senaste_version-1.0--pre-green.svg?style=flat-square)](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases)
+[![ITG-Infoskarm MIT License](https://img.shields.io/badge/licens-MIT_License-blue.svg?style=flat-square)](LICENSE)
 
 ITG-Infoskarm är skapad för [IT-Gymnasiet Göteborg](http://it-gymnasiet.se/vara-skolor/goteborg).
 
@@ -33,14 +33,14 @@ Nästa tur information hämtas som JSON från Västtrafiks realtids-API (http://
 
 Kräver `id` som parameter. T.ex. https://api.fam-ericsson.se/vasttrafik?id=9021014001960000 där `9021014001960000` är id för Chalmers.
 
-###### _Västtrafiks API har en begränsning av mängden anrop som får göras. Därför ombeds personer som är intresserade av att nyttja detta API att kontakta [itggot-joel-eriksson](mailto:joel.eriksson3@itggot.se?subject=ITG-Infoskarm@GitHub) så kan källkoden för det omskrivna API:et delas._
+###### _Västtrafiks API har en begränsning av mängden anrop som får göras. Därför ombeds personer som är intresserade av att nyttja detta API att kontakta [itggot-joel-eriksson](mailto:joel.eriksson3@itggot.se?subject=ITG-Infoskarm@GitHub) via mail eller [Gitter](https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm) så kan källkoden för det omskrivna API:et delas._
 
 #### Matsedeln (__BETA__)
 Skolmaten RSS (http://meny.dinskolmat.se/skola/rss/) omvandlat av [@fam-ericsson](https://github.com/fam-ericsson). (https://api.fam-ericsson.se/matsedel/beta/)
 
 Matsedeln hämtas från ett RSS-flöde hos [skolmaten.se](http://skolmaten.se) som blir omvandlat till JSON.
 
-###### _Detta sättet att hämta matsedeln på kommer att ersättas då ett JSON-API kommer att utvecklas som är avsett för IT-Gymnasiet Göteborg. Det nya API:et kommer att buntas ihop med det API som existerar för [ITG Appen](http://itgappen.se)._ [ITG Appens API](https://api.itgappen.se)
+###### _Detta sättet att hämta matsedeln på kommer att ersättas då ett JSON-API kommer att utvecklas som är avsett för IT-Gymnasiet Göteborg._
 
 #### Webbkamera
 Göteborgs Stads öppna data __TrafficCameras__ (http://data.goteborg.se/TrafficCamera/v0.1/help) åter distribueras av [@fam-ericsson](https://github.com/fam-ericsson).
