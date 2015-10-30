@@ -132,24 +132,6 @@ header h1 {
 	cursor: pointer !important;
 }
 
-#itgappen {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	background-color: #424242;
-	box-shadow: 0 1px 6px rgba(0,0,0,0.35);
-}
-
-#hideApps {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	width: 100px;
-	height: 100px;
-	z-index: 10;
-}
-
 a:link, a:visited, a:active, a:hover {
 	text-decoration: none;
 	color: #2196F3;
@@ -164,8 +146,7 @@ a:link, a:visited, a:active, a:hover {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	width: 100px;
-	margin-bottom: 100px;
+	width: 150px;
 }
 
 #logo {
@@ -173,13 +154,13 @@ a:link, a:visited, a:active, a:hover {
 }
 
 #github_version {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
 }
 
 @media all and (max-width: 1500px) {
-	#logo {
-		display: none;
+	#logo_container {
+		width: 100px;
 	}
 }

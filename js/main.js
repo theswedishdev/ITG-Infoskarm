@@ -305,37 +305,6 @@ function getWeek() {
 	return weekNo;
 }
 
-$(document).ready(function() {
-	if(typeof(Storage) !== "undefined") {
-    	var storage = true;
-	}
-	$("#hideApps").on("click", function() {
-		$("#itgappen").slideToggle(200, function() {
-			if ($("#itgappen").css("display") == "none") {
-				if (storage) {
-					localStorage.appsHidden = "true";
-				}
-				$("#logo_container").animate({
-					width: "150px",
-					marginBottom: "0px"
-				}, 200);
-			} else {
-				if (storage) {
-					localStorage.appsHidden = "false";
-				}
-				$("#logo_container").animate({
-					width: "100px",
-					marginBottom: "100px"
-				}, 200);
-			}
-		});
-	});
-	if (localStorage.appsHidden == "true") {
-		$("#itgappen").hide();
-		$("#logo_container").css("width", "150px").css("margin-bottom", "0");
-	}
-});
-
 clock();
 getStops();
 chalmersCam();
