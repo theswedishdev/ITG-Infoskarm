@@ -260,16 +260,6 @@ function clock() {
 	} else {
 		hours = hours.toString();
 	}
-	if(date < 10) {
-		date = "0" + date;
-	} else {
-		date = date.toString();
-	}
-	if(month < 10) {
-		month = "0" + month;
-	} else {
-		month = month.toString();
-	}
 
 	$("#datetime #clock").html("<h2>" + hours + ":" + minutes + ":" + seconds + "</h2>");
 
@@ -284,6 +274,10 @@ function clock() {
 	if (minutes == "00" && seconds == "00") {
 		getFood();
 		getGitHub();
+	}
+	
+	if (hours == "00" && minutes == "00" && seconds == "00") {
+		location.reload();
 	}
 }
 
