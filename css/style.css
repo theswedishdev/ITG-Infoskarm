@@ -34,6 +34,22 @@ h3 {
 	font-size: 2rem;
 }
 
+th {
+	font-size: 1rem;
+}
+
+td, p, #matsedel strong {
+	font-size: 1.25rem;
+}
+
+#date h2 {
+	font-size: 1.75rem;
+}
+
+#feedback h3 {
+	font-size: 1.25rem;
+}
+
 table {
 	width: 100%;
 }
@@ -65,14 +81,6 @@ tr, td {
 
 header h1 {
 	text-align: center;
-}
-
-th, td, p, #matsedel strong {
-	font-size: 1.25rem;
-}
-
-#feedback h3 {
-	font-size: 1.75rem;
 }
 
 .nastatur {
