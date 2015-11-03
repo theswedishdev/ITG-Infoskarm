@@ -26,12 +26,12 @@ h1 {
 
 h2 {
 	margin: 0;
-	font-size: 1.854em;
+	font-size: 2.5rem;
 }
 
 h3 {
 	margin: 0;
-	font-size: 1.145772;
+	font-size: 2rem;
 }
 
 table {
@@ -65,6 +65,14 @@ tr, td {
 
 header h1 {
 	text-align: center;
+}
+
+th, td, p, #matsedel strong {
+	font-size: 1.25rem;
+}
+
+#feedback h3 {
+	font-size: 1.75rem;
 }
 
 .nastatur {
