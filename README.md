@@ -3,7 +3,7 @@ ITG-Infoskarm
 
 [![Join the chat at https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![ITG-Infoskarm senaste version](https://img.shields.io/badge/Senaste_version-1.0-green.svg?style=flat-square)](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases)
+[![ITG-Infoskarm senaste version](https://img.shields.io/badge/Senaste_version-1.0.1-green.svg?style=flat-square)](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases)
 [![ITG-Infoskarm MIT License](https://img.shields.io/badge/licens-MIT_License-blue.svg?style=flat-square)](LICENSE)
 
 ITG-Infoskarm är skapad för [IT-Gymnasiet Göteborg](http://it-gymnasiet.se/vara-skolor/goteborg).
@@ -50,4 +50,4 @@ Bilderna hämtas från Göteborgs Stads öppna data som JPEG av åter distribuer
 `camera` är en frivillig parameter. T.ex. https://api.fam-ericsson.se/gbgcamera?camera=17 där `17` är camera för Chalmerstunneln mot Chalmersplatsen. Används inga parametrar visas alla trafikkameror som finns tillgängliga från Göteborgs Stads öppna data.
 
 ## Skärmdump
-<img src="https://i.imgur.com/jP7e0lb.png">
+<img src="https://i.imgur.com/ewCOijK.png">
