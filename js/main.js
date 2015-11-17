@@ -275,7 +275,7 @@ function clock() {
 		getFood();
 		getGitHub();
 	}
-	
+
 	if (hours == "00" && minutes == "00" && seconds == "00") {
 		location.reload();
 	}
@@ -298,6 +298,19 @@ function getWeek() {
 	weekNo = Math.ceil(( ( (date - yearStart) / 86400000) + 1)/7);
 	return weekNo;
 }
+
+var mousemove = 5000;
+setInterval(function(evt) {
+	mousemove -= 500;
+	if (mousemove == 0) {
+		$("html *").addClass("mousehide");
+	}
+}, 500);
+
+$(document).on("mousemove", function(evt) {
+	mousemove = 5000;
+	$("html *").removeClass("mousehide");
+});
 
 clock();
 getStops();

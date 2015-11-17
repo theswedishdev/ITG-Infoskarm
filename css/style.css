@@ -12,6 +12,10 @@
 	cursor: default;
 }
 
+.mousehide {
+	cursor: none;
+}
+
 body {
 	margin: 0;
 	font-family: 'Roboto', arial, sans-serif;
@@ -152,10 +156,6 @@ a:link, a:visited, a:active, a:hover {
 	text-decoration: none;
 	color: #2196F3;
 	cursor: pointer !important;
-}
-
-#chalmers_cam {
-	cursor: none;
 }
 
 #logo_container {
