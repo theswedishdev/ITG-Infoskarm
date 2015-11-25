@@ -7,6 +7,7 @@ var monthObj = ["januari", "februari", "mars", "april", "maj", "juni", "juli", "
 var dayObj = ["Söndag", "Måndag", "Tisdag", "Untzdag", "Torsdag", "Fredag", "Lördag"];
 
 var newDate = new Date();
+var pageOpenedAt = new Date().getTime();
 
 function getStops() {
 	var baseUrl = "https://api.fam-ericsson.se/vasttrafik/?id=";
@@ -158,7 +159,7 @@ function getStops() {
 
 function getFood() {
 	var matsedel_dagar = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
-	$.getJSON("https://api.fam-ericsson.se/matsedel/beta/", function(data) {
+	$.getJSON("https://api.fam-ericsson.se/matsedel/", function(data) {
 		$("#matsedel_dagar").html("");
 		var date = new Date();
 		var day = date.getDay();
@@ -185,24 +186,11 @@ function getFood() {
 	});
 }
 
-function getGitHub() {
-	$.getJSON("https://api.github.com/repos/itggot-joel-eriksson/ITG-Infoskarm/releases", function (data) {
-	    var title = "Version";
-	    var body = data[0].tag_name;
-	    body = body.replace("-", "--");
-	    var color = "green";
-	    if (data[0].prerelease) {
-	        color = "red";
-	    }
-
-	    var img_url = "https://img.shields.io/badge/" + title + "-" + body + "-" + color + ".svg?style=flat-square&v=" + Date.now();
-
-		if ($("#github_version").length == 0 && color == "red") {
-			$("body").prepend("<img src='" + img_url + "' id='github_version' draggable='false'>");
-		} else if (color == "red") {
-			$("#github_version").attr("src", img_url);
-		} else {
-			$("#github_version").remove();
+function getGitHub(loadedDate) {
+	$.getJSON("https://api.github.com/repos/itggot-joel-eriksson/ITG-Infoskarm", function (data) {
+	    var updatedDate = data.updated_at;
+		if (updatedDate > loadedDate) {
+			location.reload();
 		}
 	});
 }
@@ -271,9 +259,9 @@ function clock() {
 		chalmersCam();
 	}
 
-	if (minutes == "00" && seconds == "00") {
+	if (minutes == "00" && seconds == "00" || minutes == "30" && seconds == "00") {
 		getFood();
-		getGitHub();
+		getGitHub(pageOpenedAt);
 	}
 
 	if (hours == "00" && minutes == "00" && seconds == "00") {
@@ -316,6 +304,6 @@ clock();
 getStops();
 chalmersCam();
 getFood();
-getGitHub();
+getGitHub(pageOpenedAt);
 
 var clockInterval = setInterval(clock,1000);

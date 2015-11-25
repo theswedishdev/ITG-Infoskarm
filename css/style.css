@@ -169,12 +169,6 @@ a:link, a:visited, a:active, a:hover {
 	width: 100%;
 }
 
-#github_version {
-	position: fixed;
-	top: 0;
-	right: 0;
-}
-
 @media all and (max-width: 1500px) {
 	#logo_container {
 		width: 100px;
