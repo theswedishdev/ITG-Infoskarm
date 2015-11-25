@@ -15,7 +15,7 @@ function getStops() {
 	$.getJSON(baseUrl + chalmersId, function(data) {
 		var api = data;
 
-		if (api.trafik != null) {
+		if (api.trafik !== null) {
 			var serverTime = api.serverDateTime.unixTimestamp;
 
 			$("#chalmersTable").html("");
@@ -51,7 +51,7 @@ function getStops() {
 	$.getJSON(baseUrl + kapellplatsenId, function(data) {
 		var api = data;
 
-		if (api.trafik != null) {
+		if (api.trafik !== null) {
 			var serverTime = api.serverDateTime.unixTimestamp;
 
 			$("#kapellplatsenTable").html("");
@@ -87,7 +87,7 @@ function getStops() {
 	$.getJSON(baseUrl + chalmersTvargataId, function(data) {
 		var api = data;
 
-		if (api.trafik != null) {
+		if (api.trafik !== null) {
 			var serverTime = api.serverDateTime.unixTimestamp;
 
 			$("#chalmersTvargataTable").html("");
@@ -123,7 +123,7 @@ function getStops() {
 	$.getJSON(baseUrl + chalmersplatsenId, function(data) {
 		var api = data;
 
-		if (api.trafik != null) {
+		if (api.trafik !== null) {
 			var serverTime = api.serverDateTime.unixTimestamp;
 
 			$("#chalmersplatsenTable").html("");
@@ -167,19 +167,26 @@ function getFood() {
 			$("#matsedel_dagar").html("<h3>" + matsedel_dagar[day] + "</h3><p>Ingen mat idag</p>");
 		} else {
 			$.each(data.food, function(curr, food) {
-				if (food.day == matsedel_dagar[day]) {
+				if (food.reg == food.veg) {
 					if (food.day == "Onsdag") {
 						food.day = "Untzdag";
 					}
-					$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
-					if (matsedel_dagar[day] != "Fredag") {
-						$("#matsedel_dagar").append("<hr>");
+					$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
+				} else {
+					if (food.day == matsedel_dagar[day]) {
+						if (food.day == "Onsdag") {
+							food.day = "Untzdag";
+						}
+						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
+						if (matsedel_dagar[day] != "Fredag") {
+							$("#matsedel_dagar").append("<hr>");
+						}
+					} else if (food.day == matsedel_dagar[day + 1] && matsedel_dagar[day + 1] != "Lördag") {
+						if (food.day == "Onsdag") {
+							food.day = "Untzdag";
+						}
+						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
 					}
-				} else if (food.day == matsedel_dagar[day + 1] && matsedel_dagar[day + 1] != "Lördag") {
-					if (food.day == "Onsdag") {
-						food.day = "Untzdag";
-					}
-					$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
 				}
 			});
 		}
@@ -196,31 +203,10 @@ function getGitHub(loadedDate) {
 }
 
 function timeDiff(fromUnix, toUnix) {
-	return Math.abs(Math.floor(fromUnix - toUnix));
-}
-
-function dateDiff(fromDate, toDate, interval) {
-	var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
-	fromDate = new Date(fromDate);
-	toDate = new Date(toDate);
-	var timediff = toDate - fromDate;
-	if (isNaN(timediff)) {
-		return NaN
-	};
-	switch (interval) {
-		case "years": return toDate.getFullYear() - fromDate.getFullYear();
-		case "months": return (
-			( toDate.getFullYear() * 12 + toDate.getMonth() )
-			-
-			( fromDate.getFullYear() * 12 + fromDate.getMonth() )
-		);
-		case "weeks"  : return Math.floor(timediff / week);
-		case "days"   : return Math.floor(timediff / day);
-		case "hours"  : return Math.floor(timediff / hour);
-		case "minutes": return Math.abs(Math.floor(timediff / minute));
-		case "seconds": return Math.floor(timediff / second);
-		default: return undefined;
+	if (isNaN(fromUnix) || isNaN(toUnix)) {
+		return NaN;
 	}
+	return Math.abs(Math.floor(fromUnix - toUnix));
 }
 
 function clock() {
@@ -290,7 +276,7 @@ function getWeek() {
 var mousemove = 5000;
 setInterval(function(evt) {
 	mousemove -= 500;
-	if (mousemove == 0) {
+	if (mousemove === 0) {
 		$("html *").addClass("mousehide");
 	}
 }, 500);
