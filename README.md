@@ -9,7 +9,7 @@ ITG-Infoskarm
 ITG-Infoskarm är skapad för [IT-Gymnasiet Göteborg](http://it-gymnasiet.se/vara-skolor/goteborg).
 
 ## Om ITG-Infoskarm
-ITG-Infoskarm är en hemsida som samlar information om nästa tur med Västtrafik från de fyra närliggande hållplatserna vid IT-Gymnasiet, samt matsedeln (_BETA_).
+ITG-Infoskarm är en hemsida som samlar information om nästa tur med Västtrafik från de fyra närliggande hållplatserna vid IT-Gymnasiet, samt matsedeln.
 
 ITG-Infoskarm visar även bilder från en webbkamera som sitter på taket hos IT-Gymnasiet Göteborgs tak i riktning mot Chalmersplatsen.
 
