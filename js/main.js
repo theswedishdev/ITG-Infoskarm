@@ -167,24 +167,27 @@ function getFood() {
 			$("#matsedel_dagar").html("<h3>" + matsedel_dagar[day] + "</h3><p>Ingen mat idag</p>");
 		} else {
 			$.each(data.food, function(curr, food) {
-				if (food.reg == food.veg) {
+				if (food.day == matsedel_dagar[day]) {
 					if (food.day == "Onsdag") {
 						food.day = "Untzdag";
 					}
-					$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
-				} else {
-					if (food.day == matsedel_dagar[day]) {
-						if (food.day == "Onsdag") {
-							food.day = "Untzdag";
-						}
+
+					if (food.reg == food.veg) {
+						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
+					} else {
 						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
-						if (matsedel_dagar[day] != "Fredag") {
-							$("#matsedel_dagar").append("<hr>");
-						}
-					} else if (food.day == matsedel_dagar[day + 1] && matsedel_dagar[day + 1] != "Lördag") {
-						if (food.day == "Onsdag") {
-							food.day = "Untzdag";
-						}
+					}
+
+					if (matsedel_dagar[day] != "Fredag") {
+						$("#matsedel_dagar").append("<hr>");
+					}
+				} else if (food.day == matsedel_dagar[day + 1] && matsedel_dagar[day + 1] != "Lördag") {
+					if (food.day == "Onsdag") {
+						food.day = "Untzdag";
+					}
+					if (food.reg == food.veg) {
+						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
+					} else {
 						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
 					}
 				}
