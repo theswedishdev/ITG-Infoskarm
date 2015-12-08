@@ -10,151 +10,35 @@ var newDate = new Date();
 var pageOpenedAt = new Date().getTime();
 
 function getStops() {
-	var baseUrl = "https://api.fam-ericsson.se/vasttrafik/?id=";
+	var baseUrl = "http://api.itgonline.se/vasttrafik/?id=";
 
-	$.getJSON(baseUrl + chalmersId, function(data) {
-		var api = data;
+	$("#chalmersTable").vasttrafik({
+        url: baseUrl,
+        stopId: chalmersId,
+        departureNow: "nu",
+        departureNone: "Inga avgångar"
+    });
 
-		if (api.trafik !== null) {
-			var serverTime = api.serverDateTime.unixTimestamp;
+	$("#kapellplatsenTable").vasttrafik({
+        url: baseUrl,
+        stopId: kapellplatsenId,
+        departureNow: "nu",
+        departureNone: "Inga avgångar"
+    });
 
-			$("#chalmersTable").html("");
+	$("#chalmersTvargataTable").vasttrafik({
+        url: baseUrl,
+        stopId: chalmersTvargataId,
+        departureNow: "nu",
+        departureNone: "Inga avgångar"
+    });
 
-			$.each(api.trafik, function(currentFirst, linjeinfo) {
-				$.each(linjeinfo.avgang, function(currentSecond, avgang) {
-
-					var nasta = timeDiff(avgang.unixTimestamp[0], serverTime) / 60;
-					var darefter = timeDiff(avgang.unixTimestamp[1], serverTime) / 60;
-
-					if (isNaN(darefter)) {
-						darefter = "-";
-					}
-					if (nasta <= 0) {
-						nasta = "nu";
-					}
-					if (darefter <= 0) {
-						darefter = "nu";
-					}
-					if (linjeinfo.linje == 55 && linjeinfo.trafiktyp == "buss") {
-						linjeinfo.bgFarg = "#EAF5CC";
-						linjeinfo.fgFarg = "#3AB73D";
-					}
-
-					$("#chalmersTable").append("<tr><td class='linje' style='background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
-				});
-			});
-		} else {
-			$("#chalmersTable").html("<tr><td class='linje' style='background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
-		}
-	});
-
-	$.getJSON(baseUrl + kapellplatsenId, function(data) {
-		var api = data;
-
-		if (api.trafik !== null) {
-			var serverTime = api.serverDateTime.unixTimestamp;
-
-			$("#kapellplatsenTable").html("");
-
-			$.each(api.trafik, function(currentFirst, linjeinfo) {
-				$.each(linjeinfo.avgang, function(currentSecond, avgang) {
-
-					var nasta = timeDiff(avgang.unixTimestamp[0], serverTime) / 60;
-					var darefter = timeDiff(avgang.unixTimestamp[1], serverTime) / 60;
-
-					if (isNaN(darefter)) {
-						darefter = "-";
-					}
-					if (nasta <= 0) {
-						nasta = "nu";
-					}
-					if (darefter <= 0) {
-						darefter = "nu";
-					}
-					if (linjeinfo.linje == 55 && linjeinfo.trafiktyp == "buss") {
-						linjeinfo.bgFarg = "#EAF5CC";
-						linjeinfo.fgFarg = "#3AB73D";
-					}
-
-					$("#kapellplatsenTable").append("<tr><td class='linje' style='background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
-				});
-			});
-		} else {
-			$("#kapellplatsenTable").html("<tr><td class='linje' style='background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
-		}
-	});
-
-	$.getJSON(baseUrl + chalmersTvargataId, function(data) {
-		var api = data;
-
-		if (api.trafik !== null) {
-			var serverTime = api.serverDateTime.unixTimestamp;
-
-			$("#chalmersTvargataTable").html("");
-
-			$.each(api.trafik, function(currentFirst, linjeinfo) {
-				$.each(linjeinfo.avgang, function(currentSecond, avgang) {
-
-					var nasta = timeDiff(avgang.unixTimestamp[0], serverTime) / 60;
-					var darefter = timeDiff(avgang.unixTimestamp[1], serverTime) / 60;
-
-					if (isNaN(darefter)) {
-						darefter = "-";
-					}
-					if (nasta <= 0) {
-						nasta = "nu";
-					}
-					if (darefter <= 0) {
-						darefter = "nu";
-					}
-					if (linjeinfo.linje == 55 && linjeinfo.trafiktyp == "buss") {
-						linjeinfo.bgFarg = "#EAF5CC";
-						linjeinfo.fgFarg = "#3AB73D";
-					}
-
-					$("#chalmersTvargataTable").append("<tr><td class='linje' style='background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
-				});
-			});
-		} else {
-			$("#chalmersTvargataTable").html("<tr><td class='linje' style='background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
-		}
-	});
-
-	$.getJSON(baseUrl + chalmersplatsenId, function(data) {
-		var api = data;
-
-		if (api.trafik !== null) {
-			var serverTime = api.serverDateTime.unixTimestamp;
-
-			$("#chalmersplatsenTable").html("");
-
-			$.each(api.trafik, function(currentFirst, linjeinfo) {
-				$.each(linjeinfo.avgang, function(currentSecond, avgang) {
-
-					var nasta = timeDiff(avgang.unixTimestamp[0], serverTime) / 60;
-					var darefter = timeDiff(avgang.unixTimestamp[1], serverTime) / 60;
-
-					if (isNaN(darefter)) {
-						darefter = "-";
-					}
-					if (nasta <= 0) {
-						nasta = "nu";
-					}
-					if (darefter <= 0) {
-						darefter = "nu";
-					}
-					if (linjeinfo.linje == 55 && linjeinfo.trafiktyp == "buss") {
-						linjeinfo.bgFarg = "#EAF5CC";
-						linjeinfo.fgFarg = "#3AB73D";
-					}
-
-					$("#chalmersplatsenTable").append("<tr><td class='linje' style='background-color: " + linjeinfo.bgFarg + "; color: " + linjeinfo.fgFarg + ";'>" + linjeinfo.linje + "</td><td> " + avgang.resmal + " </td><td class='lage'>" + avgang.lage[0] + "</td><td class='tid'>" + nasta + "</td><td class='tid'>" + darefter + "</td>");
-				});
-			});
-		} else {
-			$("#chalmersplatsenTable").html("<tr><td class='linje' style='background-color: #F44336; color: #FFFFFF'><span class='fa fa-hourglass'></span></td><td> Inga avgångar</td><td class='lage'>-</td><td class='tid'>60+</td><td class='tid'>-</td>");
-		}
-	});
+	$("#chalmersplatsenTable").vasttrafik({
+        url: baseUrl,
+        stopId: chalmersplatsenId,
+        departureNow: "nu",
+        departureNone: "Inga avgångar"
+    });
 }
 
 function getFood() {
