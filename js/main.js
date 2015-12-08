@@ -10,7 +10,8 @@ var newDate = new Date();
 var pageOpenedAt = new Date().getTime();
 
 function getStops() {
-	var baseUrl = "http://api.itgonline.se/vasttrafik/?id=";
+	//var baseUrl = "http://api.itgonline.se/vasttrafik/?id=";
+	var baseUrl = "https://api.fam-ericsson.se/vasttrafik/?id=";
 
 	$("#chalmersTable").vasttrafik({
         url: baseUrl,
