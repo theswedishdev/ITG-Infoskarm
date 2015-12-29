@@ -49,31 +49,32 @@ function getFood() {
 		var date = new Date();
 		var day = date.getDay();
 		if (matsedel_dagar[day] == "Lördag" || matsedel_dagar[day] == "Söndag") {
-			$("#matsedel_dagar").html("<h3>" + matsedel_dagar[day] + "</h3><p>Ingen mat idag</p>");
+			$("#matsedel_dagar").html("<h3>" + matsedel_dagar[day] + "</h3><p style='color: #F44336'>Ingen mat idag</p>");
 		} else {
 			$.each(data.food, function(curr, food) {
 				if (food.day == matsedel_dagar[day]) {
-					if (food.day == "Onsdag") {
-						food.day = "Untzdag";
-					}
+					if (food.open) {
+						if (food.reg == food.veg) {
+							$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
+						} else {
+							$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
+						}
 
-					if (food.reg == food.veg) {
-						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
+						if (matsedel_dagar[day] != "Fredag") {
+							$("#matsedel_dagar").append("<hr>");
+						}
 					} else {
-						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
-					}
-
-					if (matsedel_dagar[day] != "Fredag") {
-						$("#matsedel_dagar").append("<hr>");
+						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p style='color: #F44336'>" + food.reason + "</p>");
 					}
 				} else if (food.day == matsedel_dagar[day + 1] && matsedel_dagar[day + 1] != "Lördag") {
-					if (food.day == "Onsdag") {
-						food.day = "Untzdag";
-					}
-					if (food.reg == food.veg) {
-						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
+					if (food.open) {
+						if (food.reg == food.veg) {
+							$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
+						} else {
+							$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
+						}
 					} else {
-						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
+						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p style='color: #F44336'>" + food.reason + "</p>");
 					}
 				}
 			});
