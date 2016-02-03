@@ -4,7 +4,7 @@ var chalmersTvargataId = "9021014001970000";
 var chalmersplatsenId = "9021014001961000";
 
 var monthObj = ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"];
-var dayObj = ["Söndag", "Måndag", "Tisdag", "Untzdag", "Torsdag", "Fredag", "Lördag"];
+var dayObj = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
 
 var newDate = new Date();
 var pageOpenedAt = new Date().getTime();
