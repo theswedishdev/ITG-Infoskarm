@@ -54,11 +54,7 @@ function getFood() {
 			$.each(data.food, function(curr, food) {
 				if (food.day == matsedel_dagar[day]) {
 					if (food.open) {
-						if (food.reg == food.veg) {
-							$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
-						} else {
-							$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
-						}
+						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
 
 						if (matsedel_dagar[day] != "Fredag") {
 							$("#matsedel_dagar").append("<hr>");
@@ -68,11 +64,7 @@ function getFood() {
 					}
 				} else if (food.day == matsedel_dagar[day + 1] && matsedel_dagar[day + 1] != "Lördag") {
 					if (food.open) {
-						if (food.reg == food.veg) {
-							$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p>");
-						} else {
-							$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
-						}
+						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
 					} else {
 						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p style='color: #F44336'>" + food.reason + "</p>");
 					}
@@ -98,48 +90,21 @@ function timeDiff(fromUnix, toUnix) {
 	return Math.abs(Math.floor(fromUnix - toUnix));
 }
 
-function clock() {
-	var now = new Date();
-	var year = now.getFullYear();
-	var month = now.getMonth() + 1;
-	var date = now.getDate();
+function clock() {    
+	$("#datetime #clock").html("<h2>" + moment().locale("sv").format("HH:mm:ss") + "</h2>");
+	$("#datetime #date").html("<h2>" + moment().locale("sv").format("dddd D MMMM") + "<br />Vecka " + moment().locale("sv").format("W") + "</h2>");
 
-	var hours = now.getHours();
-	var minutes = now.getMinutes();
-	var seconds = now.getSeconds();
-
-	if(seconds < 10) {
-		seconds = "0" + seconds;
-	} else {
-		seconds = seconds.toString();
-	}
-	if(minutes < 10) {
-		minutes = "0" + minutes;
-	} else {
-		minutes = minutes.toString();
-	}
-	if(hours < 10) {
-		hours = "0" + hours;
-	} else {
-		hours = hours.toString();
-	}
-
-	$("#datetime #clock").html("<h2>" + hours + ":" + minutes + ":" + seconds + "</h2>");
-
-	var today = "<h2>" + dayObj[now.getDay()] + " " + date + " " + monthObj[month - 1] + "<br>Vecka " + getWeek() + "</h2>";
-	$("#datetime #date").html(today);
-
-	if(seconds == "00" || seconds == "30") {
+	if(moment().locale("sv").format("ss") === "00" || moment().locale("sv").format("ss") === "10" || moment().locale("sv").format("ss") === "20" || moment().locale("sv").format("ss") === "30" || moment().locale("sv").format("ss") === "40" || moment().locale("sv").format("ss") === "50") {
         getStops();
 		chalmersCam();
 	}
 
-	if (minutes == "00" && seconds == "00" || minutes == "30" && seconds == "00") {
+	if (moment().locale("sv").format("mm:ss") === "00:00" || moment().locale("sv").format("mm:ss") === "30:00") {
 		getFood();
 		getGitHub(pageOpenedAt);
 	}
 
-	if (hours == "00" && minutes == "00" && seconds == "00") {
+	if (moment().locale("sv").format("HH:mm:ss") === "00:00:00") {
 		location.reload();
 	}
 }
@@ -148,17 +113,6 @@ function chalmersCam() {
 	$("#chalmers_cam").attr("src", "https://api.fam-ericsson.se/gbgcamera/?camera=17&v=" + Date.now()).on("error", function() {
 		$(this).attr("src", "img/error.png");
 	});
-}
-
-function getWeek() {
-	date = new Date();
-	weekdays = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-	weekday = weekdays[date.getDay()];
-	date.setHours(0,0,0);
-	date.setDate(date.getDate() + 4 - (date.getDay()||7));
-	yearStart = new Date(date.getFullYear(),0,1);
-	weekNo = Math.ceil(( ( (date - yearStart) / 86400000) + 1)/7);
-	return weekNo;
 }
 
 var mousemove = 5000;
