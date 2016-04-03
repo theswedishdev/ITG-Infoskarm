@@ -168,17 +168,44 @@ a:link, a:visited, a:active, a:hover {
 
 #logo_container {
 	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 150px;
+	bottom: 25px;
+	left: 25px;
+	width: 100px;
 }
 
 #logo {
 	width: 100%;
 }
 
-@media all and (max-width: 1500px) {
+@media (max-width: 1500px) {
 	#logo_container {
-		width: 100px;
+		display: none;
+	}
+}
+
+@media (max-width: 400px) {
+	h2 {
+		font-size: 2em;
+	}
+
+	td {
+		font-size: 1em;
+	}
+
+	.linje {
+		min-width: 25px;
+		max-width: 25px;
+	}
+
+	.tid, .lage {
+		min-width: 25px;
+		max-width: 25px;
+		text-align: center;
+	}
+}
+
+@media (max-width: 300px) {
+	td {
+		font-size: 0.75em;
 	}
 }
