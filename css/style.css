@@ -177,15 +177,6 @@ a:link, a:visited, a:active, a:hover {
 	width: 100%;
 }
 
-#itgawards {
-	background: #111 url("../img/itgawards-pattern.png");
-	text-align: center;
-}
-
-#itgawards_logo {
-	max-width: 300px;
-}
-
 @media (max-width: 1500px) {
 	#logo_container {
 		display: none;
