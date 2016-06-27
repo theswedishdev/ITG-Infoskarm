@@ -29,7 +29,7 @@ ITG-Infoskarm visar även bilder från en webbkamera som sitter på taket hos IT
 #### Nästa tur
 Västtrafik realtids-API omvandlat av [@fam-ericsson](https://github.com/fam-ericsson). (https://api.fam-ericsson.se/vasttrafik)
 
-Nästa tur information hämtas som JSON från Västtrafiks realtids-API (http://labs.vasttrafik.se). API:et ordnas utefter linje följt av resmål och till sist avgång. Distribueras som JSON.
+Nästa tur information hämtas som JSON från Västtrafiks realtids-API (https://developer.vasttrafik.se). API:et ordnas utefter linje följt av resmål och till sist avgång. Distribueras som JSON.
 
 Kräver `id` som parameter. T.ex. https://api.fam-ericsson.se/vasttrafik?id=9021014001960000 där `9021014001960000` är id för Chalmers.
 
