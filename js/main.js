@@ -9,6 +9,8 @@ var dayObj = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "L�
 var newDate = new Date();
 var pageOpenedAt = new Date().getTime();
 
+var clockInterval;
+
 function getStops() {
 	//var baseUrl = "http://api.itgonline.se/vasttrafik/?id=";
 	var baseUrl = "https://api.fam-ericsson.se/vasttrafik/?id=";
@@ -128,10 +130,12 @@ $(document).on("mousemove", function(evt) {
 	$("html *").removeClass("mousehide");
 });
 
-clock();
-getStops();
-chalmersCam();
-getFood();
-getGitHub(pageOpenedAt);
+$(function () {
+	clock();
+	getStops();
+	chalmersCam();
+	getFood();
+	getGitHub(pageOpenedAt);
 
-var clockInterval = setInterval(clock,1000);
+	clockInterval = setInterval(clock,1000);
+});
