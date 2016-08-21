@@ -9,7 +9,7 @@ ITG-Infoskarm
 ITG-Infoskarm är skapad för [IT-Gymnasiet Göteborg](http://it-gymnasiet.se/vara-skolor/goteborg).
 
 ## Om ITG-Infoskarm
-ITG-Infoskarm är en hemsida som samlar information om nästa tur med Västtrafik från de fyra närliggande hållplatserna vid IT-Gymnasiet, samt matsedeln.
+ITG-Infoskarm är en hemsida som samlar information om nästa tur med Västtrafik från de fyra närliggande hållplatserna vid IT-Gymnasiet Göteborg, samt matsedeln.
 
 ITG-Infoskarm visar även bilder från en webbkamera som sitter på taket hos IT-Gymnasiet Göteborgs tak i riktning mot Chalmersplatsen.
 
@@ -41,11 +41,15 @@ Skolmaten API (http://skolmaten.se) omvandlat av [@fam-ericsson](https://github.
 Matsedeln hämtas som JSON från [skolmaten.se](http://skolmaten.se) och blir omvandlat och ordnas om. Distribueras som JSON.
 
 #### Webbkamera
-Göteborgs Stads öppna data __TrafficCameras__ (http://data.goteborg.se/TrafficCamera/v0.1/help) åter distribueras av [@fam-ericsson](https://github.com/fam-ericsson).
+Göteborgs Stads öppna data __TrafficCameras__ (http://data.goteborg.se/TrafficCamera/v0.2/help) åter distribueras av [@fam-ericsson](https://github.com/fam-ericsson).
 
 Bilderna hämtas från Göteborgs Stads öppna data som JPEG av åter distribueras krypterat med __SSL__ som JPEG. (https://api.fam-ericsson.se/gbgcamera)
 
 `camera` är en frivillig parameter. T.ex. https://api.fam-ericsson.se/gbgcamera?camera=17 där `17` är camera för Chalmerstunneln mot Chalmersplatsen. Används inga parametrar visas alla trafikkameror som finns tillgängliga från Göteborgs Stads öppna data.
 
+## jquery-vasttrafik
+
+ITG-Infoskarm använder sig av [jquery-vasttrafik](https://github.com/itggot-joel-eriksson/jquery-vasttrafik) som också är ett projekt från [Joel Eriksson](https://github.com/itggot-joel-eriksson).
+
 ## Skärmdump
-<img src="https://i.imgur.com/ewCOijK.png">
+![Skärmdump från ITG-Infoskarm](https://i.imgur.com/ewCOijK.png)
