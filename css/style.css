@@ -169,40 +169,6 @@ a:link, a:visited, a:active, a:hover {
 	width: 100%;
 }
 
-/* Limited time code START */
-#itgawards {
-	background: #111111 url("../img/itg-awards/pattern.png");
- 	text-align: center;
-}
-
-#itgawards_logo {
-	max-width: 300px;
-}
-
-.info__itgappen {
-	width: calc(90% + 20px);
-	margin: 0 auto 25px auto;
-	background-color: #424242;
-}
-
-.itgappen-banner {
-	width: 100%;
-}
-
-.store-badges {
-	text-align: center;
-}
-
-.store-badge img {
-	width: 175px;
-	cursor: pointer;
-}
-
-.text--legal {
-	font-size: 0.75rem;
-}
-/* Limited time code END */
-
 @media (max-width: 1500px) {
 	#logo_container {
 		display: none;
