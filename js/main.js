@@ -19,28 +19,28 @@ function getStops() {
         url: baseUrl,
         stopId: chalmersId,
         departureNow: "nu",
-        departureNone: "Inga avgångar"
+        departureNone: "Inga avgångar hittades"
     });
 
 	$("#kapellplatsenTable").vasttrafik({
         url: baseUrl,
         stopId: kapellplatsenId,
         departureNow: "nu",
-        departureNone: "Inga avgångar"
+        departureNone: "Inga avgångar hittades"
     });
 
 	$("#chalmersTvargataTable").vasttrafik({
         url: baseUrl,
         stopId: chalmersTvargataId,
         departureNow: "nu",
-        departureNone: "Inga avgångar"
+        departureNone: "Inga avgångar hittades"
     });
 
 	$("#chalmersplatsenTable").vasttrafik({
         url: baseUrl,
         stopId: chalmersplatsenId,
         departureNow: "nu",
-        departureNone: "Inga avgångar"
+        departureNone: "Inga avgångar hittades"
     });
 }
 
@@ -92,7 +92,7 @@ function timeDiff(fromUnix, toUnix) {
 	return Math.abs(Math.floor(fromUnix - toUnix));
 }
 
-function clock() {    
+function clock() {
 	$("#datetime #clock").html("<h2>" + moment().locale("sv").format("HH:mm:ss") + "</h2>");
 	$("#datetime #date").html("<h2>" + moment().locale("sv").format("dddd D MMMM") + "<br />Vecka " + moment().locale("sv").format("W") + "</h2>");
 
