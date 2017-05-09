@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100");
-/*@import url("https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");*/
 @import url("grid.css");
 
 * {
@@ -180,19 +179,25 @@ a:link, a:visited, a:active, a:hover {
 	cursor: pointer !important;
 }
 
-#logo_container {
+.footer {
 	position: fixed;
-	bottom: 25px;
-	left: 25px;
-	width: 100px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
 }
 
 #logo {
-	width: 100%;
+	width: 100px;
+	padding: 25px;
 }
 
 @media (max-width: 1500px) {
-	#logo_container {
+	.footer {
 		display: none;
 	}
 }
@@ -222,4 +227,12 @@ a:link, a:visited, a:active, a:hover {
 	td {
 		font-size: 0.75em;
 	}
+}
+
+.footer__info > p {
+	font-size: 16px;
+}
+
+.footer__info > h3 {
+	font-size: 1rem;
 }
