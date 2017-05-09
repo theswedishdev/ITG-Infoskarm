@@ -76,15 +76,6 @@ function getFood() {
 	});
 }
 
-function getGitHub(loadedDate) {
-	$.getJSON("https://api.github.com/repos/itggot-joel-eriksson/ITG-Infoskarm", function (data) {
-	    var updatedDate = data.updated_at;
-		if (updatedDate > loadedDate) {
-			location.reload();
-		}
-	});
-}
-
 function timeDiff(fromUnix, toUnix) {
 	if (isNaN(fromUnix) || isNaN(toUnix)) {
 		return NaN;
@@ -103,10 +94,14 @@ function clock() {
 
 	if (moment().locale("sv").format("mm:ss") === "00:00" || moment().locale("sv").format("mm:ss") === "30:00") {
 		getFood();
-		getGitHub(pageOpenedAt);
 	}
 
 	if (moment().locale("sv").format("HH:mm:ss") === "00:00:00") {
+		if (moment().locale("sv").format("YYYY-MM-DD") === "2017-05-23" && window.location.hostname === "joel.f-eri.me") {
+			window.location.href = "https://itggot.info";
+			return;
+		}
+
 		location.reload();
 	}
 }
@@ -135,7 +130,6 @@ $(function () {
 	getStops();
 	chalmersCam();
 	getFood();
-	getGitHub(pageOpenedAt);
 
 	clockInterval = setInterval(clock,1000);
 });
