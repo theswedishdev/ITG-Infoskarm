@@ -229,10 +229,7 @@ a:link, a:visited, a:active, a:hover {
 	}
 }
 
-.footer__info > p {
-	font-size: 16px;
-}
-
 .footer__info > h3 {
-	font-size: 1rem;
+	font-size: 1.5rem;
+	margin: 25px;
 }

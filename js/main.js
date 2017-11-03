@@ -12,14 +12,13 @@ var pageOpenedAt = new Date().getTime();
 var clockInterval;
 
 function getStops() {
-	//var baseUrl = "http://api.itgonline.se/vasttrafik/?id=";
 	var baseUrl = "https://api.fam-ericsson.se/vasttrafik/?id=";
 
 	$("#chalmersTable").vasttrafik({
         url: baseUrl,
         stopId: chalmersId,
         departureNow: "nu",
-        departureNone: "Inga avgångar hittades"
+		departureNone: "Inga avgångar hittades"
     });
 
 	$("#kapellplatsenTable").vasttrafik({
@@ -40,7 +39,7 @@ function getStops() {
         url: baseUrl,
         stopId: chalmersplatsenId,
         departureNow: "nu",
-        departureNone: "Inga avgångar hittades"
+		departureNone: "Inga avgångar hittades"
     });
 }
 
@@ -95,19 +94,10 @@ function clock() {
 	if (moment().locale("sv").format("mm:ss") === "00:00" || moment().locale("sv").format("mm:ss") === "30:00") {
 		getFood();
 	}
-
-	if (moment().locale("sv").format("HH:mm:ss") === "00:00:00") {
-		if (moment().locale("sv").format("YYYY-MM-DD") === "2017-05-23" && window.location.hostname === "joel.f-eri.me") {
-			window.location.href = "https://itggot.info";
-			return;
-		}
-
-		location.reload();
-	}
 }
 
 function chalmersCam() {
-	$("#chalmers_cam").attr("src", "https://api.fam-ericsson.se/gbgcamera/?camera=17&client=itggot&v=" + Date.now()).on("error", function() {
+	$("#chalmers_cam").attr("src", "https://api.fam-ericsson.se/gbgcamera/?camera=17&v=" + Date.now()).on("error", function() {
 		$(this).attr("src", "img/error.png");
 	});
 }

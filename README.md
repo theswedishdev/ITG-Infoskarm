@@ -1,9 +1,11 @@
 ITG-Infoskarm
 ============================
 
-[![Join the chat at https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+## ITG-Infoskarm har fasats ut. Se den [nya infoskärmen](https://github.com/joel-eriksson/ITG-Infoskarm-vue).
 
-[![ITG-Infoskarm senaste version](https://img.shields.io/badge/Senaste_version-1.1-green.svg?style=flat-square)](https://github.com/itggot-joel-eriksson/ITG-Infoskarm/releases)
+[![ITG-Infoskarm-vue](https://img.shields.io/badge/New_project-ITG--Infoskarm--vue-f7922d.svg?style=flat-square&logo=github)](https://github.com/joel-eriksson/ITG-Infoskarm-vue)
+
+[![ITG-Infoskarm senaste version](https://img.shields.io/badge/Senaste_version-1.2.0-green.svg?style=flat-square)](https://github.com/joel-eriksson/ITG-Infoskarm/releases)
 [![ITG-Infoskarm MIT License](https://img.shields.io/badge/licens-MIT_License-blue.svg?style=flat-square)](LICENSE)
 
 ITG-Infoskarm är skapad för [IT-Gymnasiet Göteborg](http://it-gymnasiet.se/vara-skolor/goteborg).
@@ -33,8 +35,6 @@ Nästa tur information hämtas som JSON från Västtrafiks realtids-API (https:/
 
 Kräver `id` som parameter. T.ex. https://api.fam-ericsson.se/vasttrafik?id=9021014001960000 där `9021014001960000` är id för Chalmers.
 
-###### _Västtrafiks API har en begränsning av mängden anrop som får göras. Därför ombeds personer som är intresserade av att nyttja detta API att kontakta [itggot-joel-eriksson](mailto:joel.eriksson3@itggot.se?subject=ITG-Infoskarm@GitHub) via mail eller [Gitter](https://gitter.im/itggot-joel-eriksson/ITG-Infoskarm) så kan källkoden för det omskrivna API:et delas._
-
 #### Matsedeln
 Skolmaten API (http://skolmaten.se) omvandlat av [@fam-ericsson](https://github.com/fam-ericsson). (https://api.fam-ericsson.se/matsedel)
 
@@ -43,13 +43,10 @@ Matsedeln hämtas som JSON från [skolmaten.se](http://skolmaten.se) och blir om
 #### Webbkamera
 Göteborgs Stads öppna data __TrafficCameras__ (http://data.goteborg.se/TrafficCamera/v0.2/help) åter distribueras av [@fam-ericsson](https://github.com/fam-ericsson).
 
-Bilderna hämtas från Göteborgs Stads öppna data som JPEG av åter distribueras krypterat med __SSL__ som JPEG. (https://api.fam-ericsson.se/gbgcamera)
+Bilderna hämtas från Göteborgs Stads öppna data som JPEG av åter distribueras krypterat med __TLS__ som JPEG. (https://api.fam-ericsson.se/gbgcamera)
 
 `camera` är en frivillig parameter. T.ex. https://api.fam-ericsson.se/gbgcamera?camera=17 där `17` är camera för Chalmerstunneln mot Chalmersplatsen. Används inga parametrar visas alla trafikkameror som finns tillgängliga från Göteborgs Stads öppna data.
 
 ## jquery-vasttrafik
 
-ITG-Infoskarm använder sig av [jquery-vasttrafik](https://github.com/itggot-joel-eriksson/jquery-vasttrafik) som också är ett projekt från [Joel Eriksson](https://github.com/itggot-joel-eriksson).
-
-## Skärmdump
-![Skärmdump från ITG-Infoskarm](https://i.imgur.com/ewCOijK.png)
+ITG-Infoskarm använder sig av [jquery-vasttrafik](https://github.com/joel-eriksson/jquery-vasttrafik) som också är ett projekt från [Joel Ericsson](https://github.com/joel-eriksson).
