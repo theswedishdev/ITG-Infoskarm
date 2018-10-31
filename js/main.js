@@ -1,18 +1,18 @@
-var chalmersId = "9021014001960000";
-var kapellplatsenId = "9021014003760000";
-var chalmersTvargataId = "9021014001970000";
-var chalmersplatsenId = "9021014001961000";
+const chalmersId = "9021014001960000";
+const kapellplatsenId = "9021014003760000";
+const chalmersTvargataId = "9021014001970000";
+const chalmersplatsenId = "9021014001961000";
 
-var monthObj = ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"];
-var dayObj = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
+const monthObj = ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"];
+const dayObj = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
 
-var newDate = new Date();
-var pageOpenedAt = new Date().getTime();
+let newDate = new Date();
+let pageOpenedAt = new Date().getTime();
 
-var clockInterval;
+let clockInterval;
 
 function getStops() {
-	var baseUrl = "https://api.fam-ericsson.se/vasttrafik/?id=";
+	let baseUrl = "https://api.fam-ericsson.se/vasttrafik/?id=";
 
 	$("#chalmersTable").vasttrafik({
         url: baseUrl,
@@ -44,16 +44,16 @@ function getStops() {
 }
 
 function getFood() {
-	var matsedel_dagar = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
+	const matsedel_dagar = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
 	$.getJSON("https://api.fam-ericsson.se/matsedel/", function(data) {
 		$("#matsedel_dagar").html("");
-		var date = new Date();
-		var day = date.getDay();
-		if (matsedel_dagar[day] == "Lördag" || matsedel_dagar[day] == "Söndag") {
+		let date = new Date();
+		let day = date.getDay();
+		if (matsedel_dagar[day] === "Lördag" || matsedel_dagar[day] === "Söndag") {
 			$("#matsedel_dagar").html("<h3>" + matsedel_dagar[day] + "</h3><p style='color: #F44336'>Ingen mat idag</p>");
 		} else {
 			$.each(data.food, function(curr, food) {
-				if (food.day == matsedel_dagar[day]) {
+				if (food.day === matsedel_dagar[day]) {
 					if (food.open) {
 						$("#matsedel_dagar").append("<h3>" + food.day + "</h3><p>" + food.reg + "</p><strong>Vegetariskt</strong><p>" + food.veg + "</p>");
 
